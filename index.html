@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    <script>
+        $( document ).on( "pagecreate", function() {
+            $( "body > [data-role='panel']" ).panel();
+            $( "body > [data-role='panel'] [data-role='listview']" ).listview();
+        });
+        $( document ).one( "pageshow", function() {
+            $( "body > [data-role='header']" ).toolbar();
+            $( "body > [data-role='header'] [data-role='navbar']" ).navbar();
+        });
+
+    </script>
+    <style>
+	body { direction: rtl; font-family: Tahoma; }
+	@font-face {
+		font-family: 'GESSPX';
+		src:	url('fonts/GESSPX.eot');
+		src:	url('fonts/GESSPX.eot?#iefix') format('embedded-opentype'),
+				url('fonts/GESSPX.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'BNazanin';
+		src:	url('fonts/BNazanin.eot');
+		src:	url('fonts/BNazanin.eot') format('embedded-opentype'),
+				url('fonts/BNazanin.woff') format('woff'),
+				url('fonts/BNazanin.ttf') format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	.font { font-family: GESSPX; color: #F70; }
+	.ui-content .title { font-family: GESSPX; }
+	.ui-content p { text-align: justify; }
+	.left { direction: ltr; text-align: left; display: block; }
+	.footer { padding: 1em; }
+	.copyright { border: 0px; font: bold 1em Tahoma !important; margin: 0px; padding: 0px; background: none !important; }
+	.ui-collapsible-set img { width: 100%; }
+	.ui-collapsible-set span { display: block; }
+	</style>
+</head>
+<body>
+
+    <div data-role="header" data-position="fixed" data-theme="a">
+        <h1 class="font">امروز طلایی کیش</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#contact" class="font">تماس با ما</a></li>
+                <li><a href="#cars" onclick="getRSSFeed('http://www.goldenkish.com/cars','BlogList');" class="font">ماشین ها</a></li>
+                <li><a href="#home" class="font">خانه</a></li>
+            </ul>
+        </div>
+    </div><!-- /header -->
+
+    <div data-role="page" id="home">
+
+        <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
+
+        <div role="main" class="ui-content">
+
+		<h2 class="title">رنت کار :</h2>
+		<p>
+			رنت کار، به معنای اجاره اتومبیل برای مدت زمان محدودی مثلا چند ساعت یا چند روز می باشد. پس از آنکه اجاره اتومبیل در اروپا و آمریکا با استقبال مواجه شد، شرکت های بسیاری برای این منظور در سرتاسر جهان شکل گرفت که با در اختیار داشتن هزاران اتومبیل لوکس و کلاسیک در خدمت مشتریان قرار گرفت. شرکت ها و مؤسسات اجاره اتومبیل معمولا نزدیک فرودگاه ها، هتل ها و یا محدوده های پر تردد شهری قرار دارند و بعضی از آنها از طریق وب سایت خود و نرم افزار های موبایل رزرو آنلاین اتومبیل را انجام می دهند. بطور کلی مشتریان برای اهداف مختلفی اتومبیل اجاره می کنند. مسافرانی که قصد دارند برای مدتی در شهری بمانند از مشتریان اصلی این صنعت هستند. <b class="font">شرکت رنت کار امروز طلایی کیش</b> نیز یکی از شرکت های فعال در این حوزه است که در جزیره زیبای کیش مشغول به کار است.
+		</p>
+		<h2 class="title">شرایط اجاره اتومبیل :</h2>
+		<p>
+			مدارک لازم جهت اجاره اتومبیل عبارتند از :
+		</p>
+		<ol>
+			<li>اصل گواهینامه معتبر</li>
+			<li>کارت شناسایی معتبر</li>
+			<li>به امانت گذاشتن یک فقره چک به ارزش خودرو یا وجه نقد به عنوان ضمانت در اختیار شرکت</li>
+		</ol>
+		<h2 class="title">رزرو اتومبیل :</h2>
+		<p>
+			شما با مراجعه به <a href="#cars">لیست اتومبیل های شرکت</a> می توانید به بررسی و مقایسه آنها بپردازید.
+			سپس می توانید اتومبیل مورد علاقه خود را توسط فرم مربوطه واقع در صفحه همان اتومبیل، درخواست نمایید. پس از ثبت درخواست در اسرع وقت با شما تماس گرفته خواهد شد. همچنین با برقراری تماس با هر یک از شماره های موجود در صفحه <a href="#contact">تماس با ما</a> می توانید نسبت به رزرو اتومبیل مورد نظرتان اقدام نمایید.
+		</p>
+
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="footer">
+				حق نشر &copy; رنت کار امروز طلایی کیش
+                <br>
+                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+            </div>
+        </div><!-- /footer -->
+
+    </div><!-- /page -->
+
+    <div data-role="page" id="cars">
+
+        <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
+
+        <div role="main" class="ui-content">
+
+            <div data-role="collapsible-set" data-theme="a" data-content-theme="a" id="BlogList">
+                در حال بارگذاری ...
+            </div>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="footer">
+				حق نشر &copy; رنت کار امروز طلایی کیش
+                <br>
+                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+            </div>
+        </div><!-- /footer -->
+
+    </div><!-- /page -->
+
+    <div data-role="page" id="contact">
+
+        <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
+
+        <div role="main" class="ui-content">
+        
+        <br>
+        <hr>
+        <br>
+        شماره های تماس:
+        <br>
+        <span class="left">
+        0934 768 32 12
+        <br>
+		0934 768 32 11
+        <br>
+        0911 699 99 20
+        <br>
+        0938 703 98 98
+        <br>
+        0912 769 32 11
+        <br>
+        0764 442 00 02
+        </span>
+        <br>
+        <hr>
+        <br>
+        سایت:
+        <br>
+        <a href="http://www.goldenkish.com" class="left">www.goldenkish.com</a>
+        <br>
+        <hr>
+        <br>
+        این نرم افزار توسط علی اعتضاد طراحی شده است.
+		<br>
+        جهت برقراری ارتباط با طراح نرم افزار بر روی لینک زیر کلیک کنید.
+		<br>
+        <a href="http://www.alietezad.com/contact" class="left">www.alietezad.com</a>
+        
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar" class="footer">
+				حق نشر &copy; رنت کار امروز طلایی کیش
+                <br>
+                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+            </div>
+        </div><!-- /footer -->
+
+    </div><!-- /page -->
+
+    <script type="text/javascript">
+      function getRSSFeed(feed,list){
+        // Build the YQL query
+        var qryRSS = 'select * from rss where url='+'"'+feed+'"';
+        // Initiate the YQL query
+        $.getJSON("http://query.yahooapis.com/v1/public/yql",
+          {
+            // These are the settings for your API call
+            q: qryRSS,
+            format: "json"
+          },
+
+          // Take the data you got from the YQL server and output it to the screen.  The variable "data" holds the JSON you got back from the YQL server.
+          function(data) {
+            $('#'+list).empty();
+            for (i=0; i<data.query.results.item.length; i++)
+              {
+              // Output the blog posts
+              var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p>'+data.query.results.item[i].description+'</p></div>';
+              $('#'+list).append( content ).collapsibleset( "refresh" );
+            }
+        });
+      };
+    </script>
+</body>
+</html>
