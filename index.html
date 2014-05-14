@@ -36,7 +36,7 @@
 	.font { font-family: GESSPX; color: #F70; }
 	.ui-content .title { font-family: GESSPX; }
 	.ui-content p { text-align: justify; }
-	.left { direction: ltr; }
+	.left { direction: ltr; display: block; }
 	.center { text-align: center; display: block; }
 	.footer { padding: 1em; }
 	.copyright { border: 0px; font: bold 1em Tahoma !important; margin: 0px; padding: 0px; background: none !important; }
@@ -44,7 +44,7 @@
 	.ui-collapsible-set span { display: block; }
 	</style>
 </head>
-<body>
+<body onload="init()">
 
     <div data-role="header" data-position="fixed" data-theme="a">
         <h1 class="font">امروز طلایی کیش</h1>
@@ -152,7 +152,8 @@
         </div><!-- /footer -->
 
     </div><!-- /page -->
-
+	
+	
     <script type="text/javascript">
       function getRSSFeed(feed,list){
         // Build the YQL query
@@ -171,11 +172,53 @@
             for (i=0; i<data.query.results.item.length; i++)
               {
               // Output the blog posts
-              var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p>'+data.query.results.item[i].description+'</p></div>';
+              var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p><div data-role="header" data-theme="a"><div data-role="navbar"><ul><li><a href="#specs'+data.query.results.item[i].category+'" class="font">مشخصات</a></li><li><a href="#reserve'+data.query.results.item[i].category+'" class="font">رزرو</a></li></ul></div><div id="specs'+data.query.results.item[i].category+'" class="ui-body-d ui-content">'+data.query.results.item[i].description+'</div><div id="reserve'+data.query.results.item[i].category+'"><form><h4>فرم را تکمیل کنید!</h4><input name="" id="carTxt" value="'+data.query.results.item[i].title+'" type="hidden"><input name="" id="nameTxt" placeholder="نام و نام خانوادگی" value="" type="text"><input name="" id="emailTxt" placeholder="پست الکترونیک" value="" type="email"><input name="" id="numberTxt" placeholder="شماره تماس" value="" type="tel"><input id="btnSend" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" value="ارسال درخواست"></form></div></div></p></div>';
               $('#'+list).append( content ).collapsibleset( "refresh" );
             }
         });
       };
+	  
+	var app = {
+		// Application Constructor
+		initialize: function() {
+			this.bindEvents();
+		},
+		// Bind Event Listeners
+		//
+		// Bind any events that are required on startup. Common events are:
+		// 'load', 'deviceready', 'offline', and 'online'.
+		bindEvents: function() {
+			document.addEventListener('deviceready', this.onDeviceReady, false);
+		},
+		// deviceready Event Handler
+		//
+		// The scope of 'this' is the event. In order to call the 'receivedEvent'
+		// function, we must explicity call 'app.receivedEvent(...);'
+		onDeviceReady: function() {
+			$("#btnSend").click(function(){
+				alert("click");
+				var number = $("09158078020").val();
+				var message = $("#nameTxt").val()+' ('+$("#numberTxt").val()+') درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)';
+				var intent = ""; //leave empty for sending sms using default intent
+				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
+				var error = function (e) { alert('پیام ارسال نشد:' + e); };
+				sms.send(number, message, intent, success, error);
+			});
+		}
+	};
+	document.addEventListener('deviceready', function ( {
+		window.plugin.email.isServiceAvailable(
+			function (isAvailable) {
+				$("#btnSend").click(function(){
+					window.plugin.email.open({
+						to:      ['ali.etezad@yahoo.com'],
+						subject: 'رزرو خودرو (نرم افزار رنت کار)',
+						body:    $("#nameTxt").val()+'<br>('+$("#emailTxt").val()+')<br>('+$("#numberTxt").val()+')<br>درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)'
+					});
+				});
+			}
+		);
+	} ), false);
     </script>
 </body>
 </html>

@@ -26,6 +26,9 @@
 	<access origin="http://phonegap.com" subdomains="true" />
     
     <preference name="permissions" value="none"/>
+	
+	<gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />
+	<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.1" />
 
     <icon src="img/icon_small.png" />
 
