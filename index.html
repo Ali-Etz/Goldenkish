@@ -120,6 +120,15 @@
         <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
 
         <div role="main" class="ui-content">
+	
+	<form>
+		<h4>فرم را تکمیل کنید!</h4>
+		<input name="" id="carTxt" placeholder="مدل ماشین" value="" type="text">
+		<input name="" id="nameTxt" placeholder="نام و نام خانوادگی" value="" type="text">
+		<input name="" id="emailTxt" placeholder="پست الکترونیک" value="" type="email">
+		<input name="" id="numberTxt" placeholder="شماره تماس" value="" type="tel">
+		<input id="btnSend" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" value="ارسال درخواست">
+	</form>
         
         <br>
         <span class="center">شماره های تماس</span>
@@ -153,7 +162,6 @@
 
     </div><!-- /page -->
 	
-	
     <script type="text/javascript">
       function getRSSFeed(feed,list){
         // Build the YQL query
@@ -172,7 +180,7 @@
             for (i=0; i<data.query.results.item.length; i++)
               {
               // Output the blog posts
-              var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p><div data-role="navbar"><ul><li><a href="#specs'+data.query.results.item[i].category+'" class="font">مشخصات</a></li><li><a href="#reserve'+data.query.results.item[i].category+'" class="font">رزرو</a></li></ul></div><div id="specs'+data.query.results.item[i].category+'" class="ui-body-d ui-content">'+data.query.results.item[i].description+'</div><div id="reserve'+data.query.results.item[i].category+'"><form><h4>فرم را تکمیل کنید!</h4><input name="" id="carTxt" value="'+data.query.results.item[i].title+'" type="hidden"><input name="" id="nameTxt" placeholder="نام و نام خانوادگی" value="" type="text"><input name="" id="emailTxt" placeholder="پست الکترونیک" value="" type="email"><input name="" id="numberTxt" placeholder="شماره تماس" value="" type="tel"><input id="btnSend" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" value="ارسال درخواست"></form></div></p></div>';
+              var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p>'+data.query.results.item[i].description+'</p></div>';
               $('#'+list).append( content ).collapsibleset( "refresh" );
             }
         });
@@ -206,6 +214,19 @@
 			});
 		}
 	};
+	document.addEventListener('deviceready', function () {
+		window.plugin.email.isServiceAvailable(
+			function (isAvailable) {
+				$("#btnSend").click(function(){
+					window.plugin.email.open({
+						to:      ['ali.etezad@yahoo.com'],
+						subject: 'رزرو خودرو (نرم افزار رنت کار)',
+						body:    $("#nameTxt").val()+'<br>('+$("#emailTxt").val()+')<br>('+$("#numberTxt").val()+')<br>درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)'
+					});
+				});
+			}
+		);
+	}, false);
     </script>
 </body>
 </html>
