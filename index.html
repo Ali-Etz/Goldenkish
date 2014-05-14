@@ -205,8 +205,8 @@
 		onDeviceReady: function() {
 			$("#btnSend").click(function(){
 				alert("click");
-				var number = $("09158078020").val();
-				var message = $("#nameTxt").val()+' ('+$("#numberTxt").val()+') درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)';
+				var number = "09158078020";
+				var message = $("#carTxt").val();
 				var intent = ""; //leave empty for sending sms using default intent
 				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
 				var error = function (e) { alert('پیام ارسال نشد:' + e); };
@@ -214,19 +214,6 @@
 			});
 		}
 	};
-	document.addEventListener('deviceready', function () {
-		window.plugin.email.isServiceAvailable(
-			function (isAvailable) {
-				$("#btnSend").click(function(){
-					window.plugin.email.open({
-						to:      ['ali.etezad@yahoo.com'],
-						subject: 'رزرو خودرو (نرم افزار رنت کار)',
-						body:    $("#nameTxt").val()+'<br>('+$("#emailTxt").val()+')<br>('+$("#numberTxt").val()+')<br>درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)'
-					});
-				});
-			}
-		);
-	}, false);
     </script>
 </body>
 </html>
