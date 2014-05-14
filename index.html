@@ -206,19 +206,6 @@
 			});
 		}
 	};
-	document.addEventListener('deviceready', function () {
-		window.plugin.email.isServiceAvailable(
-			function (isAvailable) {
-				$("#btnSend").click(function(){
-					window.plugin.email.open({
-						to:      ['ali.etezad@yahoo.com'],
-						subject: 'رزرو خودرو (نرم افزار رنت کار)',
-						body:    $("#nameTxt").val()+'<br>('+$("#emailTxt").val()+')<br>('+$("#numberTxt").val()+')<br>درخواست رزرو ماشین '+$("#carTxt").val()+' را دارد. (نرم افزار رنت کار)'
-					});
-				});
-			}
-		);
-	}, false);
     </script>
 </body>
 </html>
