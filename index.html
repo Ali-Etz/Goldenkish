@@ -16,25 +16,8 @@
     </script>
     <style>
 	body { direction: rtl; font-family: Tahoma; }
-	@font-face {
-		font-family: 'GESSPX';
-		src:	url('fonts/GESSPX.eot');
-		src:	url('fonts/GESSPX.eot?#iefix') format('embedded-opentype'),
-				url('fonts/GESSPX.ttf') format('truetype');
-		font-weight: normal;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: 'BNazanin';
-		src:	url('fonts/BNazanin.eot');
-		src:	url('fonts/BNazanin.eot') format('embedded-opentype'),
-				url('fonts/BNazanin.woff') format('woff'),
-				url('fonts/BNazanin.ttf') format('truetype');
-		font-weight: normal;
-		font-style: normal;
-	}
-	.font { font-family: GESSPX; color: #F70; }
-	.ui-content .title { font-family: GESSPX; }
+	.color { color: #F70; }
+	.ui-content .title { color: #F50; }
 	.ui-content p { text-align: justify; }
 	.left { direction: ltr; display: block; }
 	.center { text-align: center; display: block; }
@@ -47,12 +30,12 @@
 <body onload="init()">
 
     <div data-role="header" data-position="fixed" data-theme="a">
-        <h1 class="font">امروز طلایی کیش</h1>
+        <h1 class="color">رنت کار امروز طلایی کیش</h1>
         <div data-role="navbar">
             <ul>
-                <li><a href="#contact" class="font">تماس با ما</a></li>
-                <li><a href="#cars" onclick="getRSSFeed('http://www.goldenkish.com/cars','BlogList');" class="font">ماشین ها</a></li>
-                <li><a href="#home" class="font">خانه</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
+                <li><a href="#cars" onclick="getRSSFeed('http://www.goldenkish.com/cars');">ماشین ها</a></li>
+                <li><a href="#home">خانه</a></li>
             </ul>
         </div>
     </div><!-- /header -->
@@ -65,7 +48,7 @@
 
 		<h2 class="title">رنت کار :</h2>
 		<p>
-			رنت کار، به معنای اجاره اتومبیل برای مدت زمان محدودی مثلا چند ساعت یا چند روز می باشد. پس از آنکه اجاره اتومبیل در اروپا و آمریکا با استقبال مواجه شد، شرکت های بسیاری برای این منظور در سرتاسر جهان شکل گرفت که با در اختیار داشتن هزاران اتومبیل لوکس و کلاسیک در خدمت مشتریان قرار گرفت. شرکت ها و مؤسسات اجاره اتومبیل معمولا نزدیک فرودگاه ها، هتل ها و یا محدوده های پر تردد شهری قرار دارند و بعضی از آنها از طریق وب سایت خود و نرم افزار های موبایل رزرو آنلاین اتومبیل را انجام می دهند. بطور کلی مشتریان برای اهداف مختلفی اتومبیل اجاره می کنند. مسافرانی که قصد دارند برای مدتی در شهری بمانند از مشتریان اصلی این صنعت هستند. <b class="font">شرکت رنت کار امروز طلایی کیش</b> نیز یکی از شرکت های فعال در این حوزه است که در جزیره زیبای کیش مشغول به کار است.
+			رنت کار، به معنای اجاره اتومبیل برای مدت زمان محدودی مثلا چند ساعت یا چند روز می باشد. پس از آنکه اجاره اتومبیل در اروپا و آمریکا با استقبال مواجه شد، شرکت های بسیاری برای این منظور در سرتاسر جهان شکل گرفت که با در اختیار داشتن هزاران اتومبیل لوکس و کلاسیک در خدمت مشتریان قرار گرفت. شرکت ها و مؤسسات اجاره اتومبیل معمولا نزدیک فرودگاه ها، هتل ها و یا محدوده های پر تردد شهری قرار دارند و بعضی از آنها از طریق وب سایت خود و نرم افزار های موبایل رزرو آنلاین اتومبیل را انجام می دهند. بطور کلی مشتریان برای اهداف مختلفی اتومبیل اجاره می کنند. مسافرانی که قصد دارند برای مدتی در شهری بمانند از مشتریان اصلی این صنعت هستند. <b class="color">شرکت رنت کار امروز طلایی کیش</b> نیز یکی از شرکت های فعال در این حوزه می باشد که در جزیره زیبای کیش مشغول به خدمت رسانی است.
 		</p>
 		<h2 class="title">شرایط اجاره اتومبیل :</h2>
 		<p>
@@ -79,7 +62,7 @@
 		<h2 class="title">رزرو اتومبیل :</h2>
 		<p>
 			شما با مراجعه به <a href="#cars">لیست اتومبیل های شرکت</a> می توانید به بررسی و مقایسه آنها بپردازید.
-			سپس می توانید اتومبیل مورد علاقه خود را توسط فرم مربوطه واقع در صفحه همان اتومبیل، درخواست نمایید. پس از ثبت درخواست در اسرع وقت با شما تماس گرفته خواهد شد. همچنین با برقراری تماس با هر یک از شماره های موجود در صفحه <a href="#contact">تماس با ما</a> می توانید نسبت به رزرو اتومبیل مورد نظرتان اقدام نمایید.
+			همچنین با برقراری تماس با هر یک از شماره های موجود در صفحه <a href="#contact">تماس با ما</a> می توانید نسبت به رزرو اتومبیل مورد نظرتان اقدام نمایید.
 		</p>
 
         </div><!-- /content -->
@@ -88,7 +71,7 @@
             <div data-role="navbar" class="footer">
 				حق نشر &copy; رنت کار امروز طلایی کیش
                 <br>
-                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+                <a href="http://www.alietezad.com/contact" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
             </div>
         </div><!-- /footer -->
 
@@ -99,17 +82,40 @@
         <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
 
         <div role="main" class="ui-content">
-
-            <div data-role="collapsible-set" data-theme="a" data-content-theme="a" id="BlogList">
-                در حال بارگذاری ...
-            </div>
+			<div data-role="tabs" id="tabs">
+				<div data-role="navbar">
+					<ul>
+						<li style="float: right;"><a href="#carpage" data-ajax="true" style="border-right-width:1px;border-left-width:0px;">لیست ماشین ها</a></li>
+						<li style="float: right;"><a href="#reserveform" data-ajax="true">رزرو ماشین</a></li>
+					</ul>
+				</div>
+				
+				<div data-role="main" id="carpage">
+					<div data-role="collapsible-set" data-theme="a" data-content-theme="a" id="carslist">
+						در حال بارگذاری ...
+					</div>
+				</div>
+				<div data-role="main" id="reserveform">
+					<div data-theme="a" data-content-theme="a" class="ui-field-contain">
+						<p>جهت رزرو خودرو مورد نظر خود فرم زیر را تکمیل نمایید. لازم به ذکر است این سیستم توسط <span class="color">پیامک</span> درخواست شما را به ما منتقل خواهد نمود.</p>
+						<select name="carTxt" id="carTxt">
+							<option value="">مدل ماشین</option>
+							در حال بارگذاری ...
+						</select>
+						<input name="nameTxt" id="nameTxt" placeholder="نام و نام خانوادگی" value="" style="text-align: center;" type="text">
+						<input name="emailTxt" id="emailTxt" placeholder="پست الکترونیک" value="" style="text-align: center;" type="email">
+						<input name="numberTxt" id="numberTxt" placeholder="شماره تماس" value="" style="text-align: center;" type="tel">
+						<input name="btnSend" id="btnSend" type="button" class="ui-shadow ui-btn ui-corner-all ui-mini" value="ارسال درخواست">
+					</div>
+				</div>
+			</div>
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed">
             <div data-role="navbar" class="footer">
 				حق نشر &copy; رنت کار امروز طلایی کیش
                 <br>
-                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+                <a href="http://www.alietezad.com/contact" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
             </div>
         </div><!-- /footer -->
 
@@ -120,18 +126,11 @@
         <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
 
         <div role="main" class="ui-content">
-	
-	<form>
-		<h4>فرم را تکمیل کنید!</h4>
-		<input name="" id="carTxt" placeholder="مدل ماشین" value="" type="text">
-		<input name="" id="nameTxt" placeholder="نام و نام خانوادگی" value="" type="text">
-		<input name="" id="emailTxt" placeholder="پست الکترونیک" value="" type="email">
-		<input name="" id="numberTxt" placeholder="شماره تماس" value="" type="tel">
-		<input id="btnSend" type="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check" value="ارسال درخواست">
-	</form>
         
+		<hr>
+		
         <br>
-        <span class="center">شماره های تماس</span>
+        <span class="center">شماره های تماس<br>(جهت برقراری تماس بر روی یکی از شماره های زیر کلیک کنید)</span>
 		<a href="tel:09347683212" class="left" data-role="button">0934 768 32 12</a>
 		<a href="tel:09347683211" class="left" data-role="button">0934 768 32 11</a>
 		<a href="tel:09116999920" class="left" data-role="button">0911 699 99 20</a>
@@ -139,15 +138,10 @@
 		<a href="tel:09127693211" class="left" data-role="button">0912 769 32 11</a>
 		<a href="tel:07644420002" class="left" data-role="button">0764 442 00 02</a>
         <br>
-        <span class="center">سایت</span>
-        <br>
+        <span class="center">سایت شرکت<br>(جهت مشاهده سایت و استفاده از سیستم رزرواسیون بر روی دکمه زیر کلیک کنید)</span>
         <a href="http://www.goldenkish.com" data-role="button">www.goldenkish.com</a>
         <br>
-		<span class="center">
-        این نرم افزار توسط علی اعتضاد طراحی شده است.
-		<br>
-        جهت برقراری ارتباط با طراح نرم افزار بر روی لینک زیر کلیک کنید.
-		</span>
+		<span class="center color">این نرم افزار توسط علی اعتضاد طراحی شده است.<br>(جهت برقراری ارتباط با طراح نرم افزار بر روی دکمه زیر کلیک کنید)</span>
         <a href="http://www.alietezad.com/contact" data-role="button">www.alietezad.com</a>
         
         </div><!-- /content -->
@@ -156,14 +150,14 @@
             <div data-role="navbar" class="footer">
 				حق نشر &copy; رنت کار امروز طلایی کیش
                 <br>
-                <a href="http://www.alietezad.com" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
+                <a href="http://www.alietezad.com/contact" class="copyright" data-role="none">طراحی و توسعه توسط علی اعتضاد</a>
             </div>
         </div><!-- /footer -->
 
     </div><!-- /page -->
 	
     <script type="text/javascript">
-      function getRSSFeed(feed,list){
+      function getRSSFeed(feed){
         // Build the YQL query
         var qryRSS = 'select * from rss where url='+'"'+feed+'"';
         // Initiate the YQL query
@@ -176,12 +170,19 @@
 
           // Take the data you got from the YQL server and output it to the screen.  The variable "data" holds the JSON you got back from the YQL server.
           function(data) {
-            $('#'+list).empty();
+            $('#carTxt').empty();
+            for (j=0; j<data.query.results.item.length; j++)
+              {
+              // Output the blog posts
+              var content = '<option value="'+data.query.results.item[j].title+'">'+data.query.results.item[j].title+'</option>';
+              $('#carTxt').append( content ).select( "refresh" );
+            }
+            $('#carslist').empty();
             for (i=0; i<data.query.results.item.length; i++)
               {
               // Output the blog posts
               var content = '<div data-role="collapsible"><h3>'+data.query.results.item[i].title+'</h3><p>'+data.query.results.item[i].description+'</p></div>';
-              $('#'+list).append( content ).collapsibleset( "refresh" );
+              $('#carslist').append( content ).collapsibleset( "refresh" );
             }
         });
       };
