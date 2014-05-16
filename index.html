@@ -8,7 +8,36 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script src="cordova.js"></script>
-    <script src="cordova_plugins.js"></script>
+    <script type="text/javascript">
+	var app = {
+		// Application Constructor
+		initialize: function() {
+			this.bindEvents();
+		},
+		// Bind Event Listeners
+		//
+		// Bind any events that are required on startup. Common events are:
+		// 'load', 'deviceready', 'offline', and 'online'.
+		bindEvents: function() {
+			document.addEventListener('deviceready', this.onDeviceReady, false);
+		},
+		// deviceready Event Handler
+		//
+		// The scope of 'this' is the event. In order to call the 'receivedEvent'
+		// function, we must explicity call 'app.receivedEvent(...);'
+		onDeviceReady: function() {
+			$("#btnSend").click(function(){
+				alert("click");
+				var number = "09158078020";
+				var message = $("#carTxt").val();
+				var intent = "INTENT"; //leave empty for sending sms using default intent
+				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
+				var error = function (e) { alert('پیام ارسال نشد:' + e); };
+				sms.send(number, message, intent, success, error);
+			});
+		}
+	};
+    </script>
     <script>
         $( document ).one( "pageshow", function() {
             $( "body > [data-role='header']" ).toolbar();
@@ -105,10 +134,10 @@
 							<option value="">مدل ماشین</option>
 							در حال بارگذاری ...
 						</select>
-						<input name="nameTxt" id="nameTxt" placeholder="نام و نام خانوادگی" value="" style="text-align: center;" type="text">
-						<input name="emailTxt" id="emailTxt" placeholder="پست الکترونیک" value="" style="text-align: center;" type="email">
-						<input name="numberTxt" id="numberTxt" placeholder="شماره تماس" value="" style="text-align: center;" type="tel">
-						<input name="btnSend" id="btnSend" type="button" class="ui-shadow ui-btn ui-corner-all ui-mini" value="ارسال درخواست">
+						<input name="" id="nameTxt" placeholder="نام و نام خانوادگی" value="" style="text-align: center;" type="text">
+						<input name="" id="emailTxt" placeholder="پست الکترونیک" value="" style="text-align: center;" type="email">
+						<input name="" id="numberTxt" placeholder="شماره تماس" value="" style="text-align: center;" type="tel">
+						<input name="" id="btnSend" type="button" class="ui-shadow ui-btn ui-corner-all ui-mini" value="ارسال درخواست">
 					</div>
 				</div>
 			</div>
@@ -189,35 +218,6 @@
             }
         });
       };
-	  
-	var app = {
-		// Application Constructor
-		initialize: function() {
-			this.bindEvents();
-		},
-		// Bind Event Listeners
-		//
-		// Bind any events that are required on startup. Common events are:
-		// 'load', 'deviceready', 'offline', and 'online'.
-		bindEvents: function() {
-			document.addEventListener('deviceready', this.onDeviceReady, false);
-		},
-		// deviceready Event Handler
-		//
-		// The scope of 'this' is the event. In order to call the 'receivedEvent'
-		// function, we must explicity call 'app.receivedEvent(...);'
-		onDeviceReady: function() {
-			$("#btnSend").click(function(){
-				alert("click");
-				var number = "09158078020";
-				var message = $("#carTxt").val();
-				var intent = ""; //leave empty for sending sms using default intent
-				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
-				var error = function (e) { alert('پیام ارسال نشد:' + e); };
-				sms.send(number, message, intent, success, error);
-			});
-		}
-	};
     </script>
 </body>
 </html>
