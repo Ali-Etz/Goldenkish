@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
     <script>
         $( document ).one( "pageshow", function() {
             $( "body > [data-role='header']" ).toolbar();
@@ -16,6 +18,7 @@
     </script>
     <style>
 	body { direction: rtl; font-family: Tahoma; }
+	h1 { margin: 0 20% !important; }
 	.color { color: #F70; }
 	.ui-content .title { color: #F50; }
 	.ui-content p { text-align: justify; }
@@ -126,11 +129,10 @@
         <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
 
         <div role="main" class="ui-content">
-        
-		<hr>
 		
         <br>
-        <span class="center">شماره های تماس<br>(جهت برقراری تماس بر روی یکی از شماره های زیر کلیک کنید)</span>
+		<span class="center"><b>شماره های تماس</b></span>
+        <p>جهت برقراری تماس بر روی یکی از شماره های زیر کلیک کنید.</p>
 		<a href="tel:09347683212" class="left" data-role="button">0934 768 32 12</a>
 		<a href="tel:09347683211" class="left" data-role="button">0934 768 32 11</a>
 		<a href="tel:09116999920" class="left" data-role="button">0911 699 99 20</a>
@@ -138,10 +140,11 @@
 		<a href="tel:09127693211" class="left" data-role="button">0912 769 32 11</a>
 		<a href="tel:07644420002" class="left" data-role="button">0764 442 00 02</a>
         <br>
-        <span class="center">سایت شرکت<br>(جهت مشاهده سایت و استفاده از سیستم رزرواسیون بر روی دکمه زیر کلیک کنید)</span>
+		<span class="center"><b>سایت شرکت</b></span>
+        <p>جهت مشاهده سایت و استفاده از سیستم رزرواسیون بر روی دکمه زیر کلیک کنید.</p>
         <a href="http://www.goldenkish.com" data-role="button">www.goldenkish.com</a>
         <br>
-		<span class="center color">این نرم افزار توسط علی اعتضاد طراحی شده است.<br>(جهت برقراری ارتباط با طراح نرم افزار بر روی دکمه زیر کلیک کنید)</span>
+		<p class="color">این نرم افزار توسط <b>علی اعتضاد</b> طراحی شده است. جهت برقراری ارتباط با طراح نرم افزار بر روی دکمه زیر کلیک کنید.</p>
         <a href="http://www.alietezad.com/contact" data-role="button">www.alietezad.com</a>
         
         </div><!-- /content -->
