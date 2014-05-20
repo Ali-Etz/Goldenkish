@@ -8,7 +8,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script src="cordova.js"></script>
-    <script src="js/smsplugin.js"></script>
     <script type="text/javascript">
 	var app = {
 		// Application Constructor
@@ -139,6 +138,13 @@
 						<input name="" id="emailTxt" placeholder="پست الکترونیک" value="" style="text-align: center;" type="email">
 						<input name="" id="numberTxt" placeholder="شماره تماس" value="" style="text-align: center;" type="tel">
 						<input name="" id="btnSend" type="button" class="ui-shadow ui-btn ui-corner-all ui-mini" value="ارسال درخواست">
+						<button id="emailSend" type="button" data-role="button">send email</button>
+						<script type="text/javascript">
+							$("#emailSend").click(function(){
+								var message = $("#carTxt").val();
+								window.plugins.EmailComposer.showEmailComposer("reserve form",message,["ali.etezad@yahoo.com"],[],[],false,[]);
+							});
+						</script>
 					</div>
 				</div>
 			</div>
