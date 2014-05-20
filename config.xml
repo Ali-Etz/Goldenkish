@@ -30,7 +30,6 @@
 	<preference name="splashscreen" value="img/splash.png" />
 	
 	<gap:plugin name="tr.bel.mamak.sms_plagin" version="0.1.0" />
-	<gap:plugin name="org.apache.cordova.splashscreen" version="0.2.7" />
 	<gap:plugin name="com.badrit.emailcomposer" version="0.1.0" />
 
     <icon src="img/icon_small.png" />

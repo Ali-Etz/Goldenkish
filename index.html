@@ -8,36 +8,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.mobile-1.4.0.min.js"></script>
     <script src="cordova.js"></script>
-    <script type="text/javascript">
-	var app = {
-		// Application Constructor
-		initialize: function() {
-			this.bindEvents();
-		},
-		// Bind Event Listeners
-		//
-		// Bind any events that are required on startup. Common events are:
-		// 'load', 'deviceready', 'offline', and 'online'.
-		bindEvents: function() {
-			document.addEventListener('deviceready', this.onDeviceReady, false);
-		},
-		// deviceready Event Handler
-		//
-		// The scope of 'this' is the event. In order to call the 'receivedEvent'
-		// function, we must explicity call 'app.receivedEvent(...);'
-		onDeviceReady: function() {
-			$("#btnSend").click(function(){
-				alert("click");
-				var number = "09158078020";
-				var message = $("#carTxt").val();
-				var intent = "INTENT"; //leave empty for sending sms using default intent
-				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
-				var error = function (e) { alert('پیام ارسال نشد:' + e); };
-				sms.send(number, message, intent, success, error);
-			});
-		}
-	};
-    </script>
     <script>
         $( document ).one( "pageshow", function() {
             $( "body > [data-role='header']" ).toolbar();
@@ -114,6 +84,7 @@
         <div style="text-align:center;padding:1em;background:#333;"><img src="img/logo.png" style="width:90%;"></div>
 
         <div role="main" class="ui-content">
+        	<p class="color">جهت استفاده از این بخش دسترسی به اینترنت الزامی است!</p>
 			<div data-role="tabs" id="tabs">
 				<div data-role="navbar">
 					<ul>
@@ -129,7 +100,7 @@
 				</div>
 				<div data-role="main" id="reserveform">
 					<div data-theme="a" data-content-theme="a" class="ui-field-contain">
-						<p>جهت رزرو خودرو مورد نظر خود فرم زیر را تکمیل نمایید. لازم به ذکر است این سیستم توسط <span class="color">پیامک</span> درخواست شما را به ما منتقل خواهد نمود.</p>
+						<p>جهت رزرو خودرو مورد نظر خود فرم زیر را تکمیل نمایید. لازم به ذکر است این سیستم توسط <span class="color">ایمیل</span> درخواست شما را به ما منتقل خواهد نمود.</p>
 						<select name="carTxt" id="carTxt">
 							<option value="">مدل ماشین</option>
 							در حال بارگذاری ...
@@ -141,10 +112,40 @@
 						<button id="emailSend">send email</button>
 						<script type="text/javascript">
 							$("#emailSend").click(function(){
-								var message = $("#carTxt").val();
-								window.plugins.EmailComposer.showEmailComposer("reserve form",message,["ali.etezad@yahoo.com"],[],[],false,[]);
+								var message = 'نام و نام خانوادگی: '+$("#nameTxt").val()+'<br>پست الکترونیک: '+$("#emailTxt").val()+'<br>شماره تماس: '+$("#numberTxt").val()+'<br>مدل ماشین: '+$("#carTxt").val()+'<br><br>(ارسال شده توسط نرم افزار موبایل)';
+								window.plugins.EmailComposer.showEmailComposer("درخواست رزرو",message,["kish.golden@gmail.com"],[],[],true,[]);
 							});
 						</script>
+    <script type="text/javascript">
+	var app = {
+		// Application Constructor
+		initialize: function() {
+			this.bindEvents();
+		},
+		// Bind Event Listeners
+		//
+		// Bind any events that are required on startup. Common events are:
+		// 'load', 'deviceready', 'offline', and 'online'.
+		bindEvents: function() {
+			document.addEventListener('deviceready', this.onDeviceReady, false);
+		},
+		// deviceready Event Handler
+		//
+		// The scope of 'this' is the event. In order to call the 'receivedEvent'
+		// function, we must explicity call 'app.receivedEvent(...);'
+		onDeviceReady: function() {
+			$("#btnSend").click(function(){
+				alert("click");
+				var number = "09158078020";
+				var message = $("#carTxt").val();
+				var intent = "INTENT"; //leave empty for sending sms using default intent
+				var success = function () { alert('پیام با موفقیت ارسال شد!'); };
+				var error = function (e) { alert('پیام ارسال نشد:' + e); };
+				sms.send(number, message, intent, success, error);
+			});
+		}
+	};
+    </script>
 					</div>
 				</div>
 			</div>
